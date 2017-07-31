@@ -8,3 +8,6 @@
 /.idea
 /.php_cs.cache
 /composer.lock
+/.settings/
+/.buildpath
+/.project
