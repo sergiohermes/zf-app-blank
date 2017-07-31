@@ -1,5 +1,4 @@
 <?php
-
 namespace User\Entity;
 
 use DateTime;
@@ -7,54 +6,76 @@ use ZfcRbac\Identity\IdentityInterface;
 
 class User implements IdentityInterface
 {
+
     const ROLE_GUEST = 'guest';
+
     const ROLE_REGISTERED = 'registered';
-    
+
     /**
+     *
      * @var integer
      */
     protected $id;
+
     /**
+     *
      * @var string
      */
     protected $person;
+
     /**
+     *
      * @var string
      */
     protected $email;
+
     /**
+     *
      * @var string
      */
     protected $password;
+
     /**
+     *
      * @var string
      */
     protected $roleId;
+
     /**
+     *
      * @var boolean
      */
     protected $emailConfirm = false;
+
     /**
+     *
      * @var string
      */
     protected $confirmKey;
+
     /**
+     *
      * @var DateTime
      */
     protected $createdAt;
+
     /**
+     *
      * @var string|null
      */
     protected $restoreKey;
+
     /**
+     *
      * @var DateTime|null
      */
     protected $restoreKeyExpire;
 
     /**
+     *
      * @return integer|null
      */
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -99,6 +120,7 @@ class User implements IdentityInterface
     }
 
     /**
+     *
      * @return string|null
      */
     public function getRoleId()
@@ -114,7 +136,9 @@ class User implements IdentityInterface
 
     public function getRoles(): array
     {
-        return [$this->getRoleId()];
+        return [
+            $this->getRoleId()
+        ];
     }
 
     public function getEmailConfirm(): bool
@@ -150,24 +174,24 @@ class User implements IdentityInterface
         return $this->createdAt;
     }
 
-    public function setRestoreKey(?string $restoreKey): User
+    public function setRestoreKey(string $restoreKey): User
     {
         $this->restoreKey = $restoreKey;
         return $this;
     }
 
-    public function getRestoreKey(): ?string
+    public function getRestoreKey(): string
     {
         return $this->restoreKey;
     }
 
-    public function setRestoreKeyExpire(?DateTime $restoreKeyExpire): User
+    public function setRestoreKeyExpire(DateTime $restoreKeyExpire): User
     {
         $this->restoreKeyExpire = $restoreKeyExpire;
         return $this;
     }
 
-    public function getRestoreKeyExpire(): ?DateTime
+    public function getRestoreKeyExpire(): DateTime
     {
         return $this->restoreKeyExpire;
     }
