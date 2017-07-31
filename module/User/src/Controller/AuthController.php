@@ -11,9 +11,9 @@ use Zend\Http\Response;
 
 class AuthController extends AbstractActionController
 {
-    private const ROUTE_TO_HOME = 'home';
-    private const ROUTE_TO_SIGNIN = 'signin';
-    private const ROUTE_TO_CONFIRM_AGAIN = 'confirm-again';
+    const ROUTE_TO_HOME = 'home';
+    const ROUTE_TO_SIGNIN = 'signin';
+    const ROUTE_TO_CONFIRM_AGAIN = 'confirm-again';
     
     /**
      * @var FormAbstract

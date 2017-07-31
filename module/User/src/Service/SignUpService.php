@@ -13,9 +13,9 @@ use DateTime;
 
 class SignUpService implements EventManagerAwareInterface
 {
-    public const DEFAULT_ROLE = User::ROLE_REGISTERED;
-    public const LENGTH_CONFIRM_KEY = 18;
-    public const CONFIRM_KEY_DICT = 'abcdefghijklmnopqrstuvwxyz0123456789-_@$^';
+    const DEFAULT_ROLE = User::ROLE_REGISTERED;
+    const LENGTH_CONFIRM_KEY = 18;
+    const CONFIRM_KEY_DICT = 'abcdefghijklmnopqrstuvwxyz0123456789-_@$^';
     
     /**
      * @var UserRepository

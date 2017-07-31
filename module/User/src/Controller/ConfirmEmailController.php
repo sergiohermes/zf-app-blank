@@ -10,7 +10,7 @@ use Zend\View\Model\ViewModel;
 
 class ConfirmEmailController extends AbstractActionController
 {
-    private const ROUTE_TO_SIGNIN = 'signin';
+    const ROUTE_TO_SIGNIN = 'signin';
 
     /**
      * @var ConfirmEmailService

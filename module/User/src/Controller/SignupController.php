@@ -15,8 +15,8 @@ use Zend\Http\Response;
 
 class SignupController extends AbstractActionController
 {
-    private const ROUTE_TO_HOME = 'home';
-    private const ROUTE_TO_SIGNIN = 'signin';
+    const ROUTE_TO_HOME = 'home';
+    const ROUTE_TO_SIGNIN = 'signin';
 
     /**
      * @var FormAbstract

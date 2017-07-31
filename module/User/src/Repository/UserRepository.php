@@ -7,7 +7,7 @@ use User\Entity\User;
 
 class UserRepository extends RepositoryAbstract
 {
-    public function findNotConfirm(string $email, string $confirmKey): ?User
+    public function findNotConfirm(string $email, string $confirmKey): User
     {
         $entity = $this->findOneBy(['email' => $email, 'confirmKey' => $confirmKey]);
         if ($entity === null || $entity->getEmailConfirm()) {
@@ -16,7 +16,7 @@ class UserRepository extends RepositoryAbstract
         return $entity;
     }
 
-    public function findForRestore(string $email, string $restoreKey): ?User
+    public function findForRestore(string $email, string $restoreKey): User
     {
         return $this->findOneBy(['email' => $email, 'restoreKey' => $restoreKey]);
     }

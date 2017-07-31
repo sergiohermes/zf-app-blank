@@ -14,9 +14,9 @@ use Zend\Crypt\Password\PasswordInterface;
 
 class AccessService
 {
-    public const RESTORE_KEY_LENGTH = 18;
-    public const RESTORE_KEY_DICT = 'abcdefghijklmnopqrstuvwxyz0123456789-_@$^';
-    public const RESTORE_KEY_DURATION = 900; // in seconds
+    const RESTORE_KEY_LENGTH = 18;
+    const RESTORE_KEY_DICT = 'abcdefghijklmnopqrstuvwxyz0123456789-_@$^';
+    const RESTORE_KEY_DURATION = 900; // in seconds
 
     /**
      * @var MailService
@@ -67,7 +67,7 @@ class AccessService
         return true;
     }
 
-    public function findForRestore(string $email, string $key): ?User
+    public function findForRestore(string $email, string $key): User
     {
         $entity = $this->userRepository->findForRestore($email, $key);
         if (!$entity || $entity->getRestoreKeyExpire() < new DateTime) {
